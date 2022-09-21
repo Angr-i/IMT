@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Калькулято ІМТ</title>
+</head>
+<body>
+    <div class="content">
+        <div class="items">
+            
+            <form class="form" id="form" action="#">
+                <ol>
+                    <li><h1>Калькулято IMT</h1></li>
+                    <li><p>Ваша вага в кг</p><input type="text"class='input' name="kg"></li>
+                    <li><p>Ваш зріст в метрах</p><input type="text"class='input' name ="cm"></li>
+                    <li><button type="submit" class="btn">Обчислити</button></li>
+                </ol>
+                
+                
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let x=this.kg.value/(Math.pow(this.cm.value,2));
+        x=x.toFixed(1)
+        alert(x);
+        if(x<=16){
+            alert("Виражений дефіцит маси тіла")
+        }
+        else if(x<=18.5){
+            alert("Недостатня маса тіла (дефіцит)")
+        }
+        else if(x<=25){
+            alert("Норма")
+        }
+        else if(x>25){
+            alert("Збирайся на пробіжку")
+        }
+    })
+
+</script>
+</html>
